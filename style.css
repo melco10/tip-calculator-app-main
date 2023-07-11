@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root{
+    /*### Primary*/
+    --Strongcyan: hsl(172, 67%, 45%);
+    
+    /*### Neutral*/
+    --verydarkcyan:hsl(183, 100%, 15%);
+    --Darkgrayishcyan: hsl(186, 14%, 43%);
+    --Grayishcyan: hsl(184, 14%, 56%);
+    --Lightgrayishyan: hsl(185, 41%, 84%);
+    --Verylightgrayishcyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    --red: #EF6262;
+
+    --f24: 1.5em;
+    --fw4: 400;
+    --fw7:700;
+    --ff: 'Space Mono', monospace;
+
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+body{
+   
+    height: 100vh;
+  
+    font-family: 'Space Mono', monospace;
+    background-color: var(--Lightgrayishyan);
+}
+
+.main{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.calc-area{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    line-height: 2;
+    color: var(--Darkgrayishcyan);
+}
+
+.calc-area form, .calc-area form input, 
+.select-tip, .select-tip button, input{
+    font-weight: var(--fw7);
+    font-family: var(--ff);
+}
+
+
+
+
+.input-icon{
+    position: absolute;
+    margin-left: 15px; 
+    margin-top: 10px;
+}
+.input-area{
+    background: var(--Lightgrayishyan);
+    color: var(--verydarkcyan);
+    border: none;   
+    width: 360px;
+    padding: 0.2em 1em 0.2em 1.5em;
+    
+    border-radius: 5px;
+    outline: none;
+    text-align: right;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+.input-area:focus{
+    border:1px solid var(--Strongcyan);    
+}
+
+
+
+.input-area[type="number"]{
+    text-align: right;
+}
+
+#warn-txt, #warn-txt2{
+    position: absolute;
+    margin-top: -32px;
+    margin-left: 230px;
+    color: var(--red);
+    opacity: 0;
+}
+
+
+.container{
+    display: flex;
+    background-color: var(--Verylightgrayishcyan);
+    padding: 2em 3em;
+    border-radius: 5px;
+    gap: 50px;
+}
+
+.select-tip input[type="number"]{
+    text-align: right;
+    color: var(--verydarkcyan);  
+}
+
+.select-tip input::placeholder {
+    text-align: center;
+}
+.select-tip input{
+    width: 90px;   
+    transition: 0.2s ease;
+    outline: none;
+    text-align: right;
+    padding: 0px 0.42em;
+}
+
+
+.select-tip input:focus,
+.select-tip input[type="number"]:focus {
+  border: 1px solid var(--Strongcyan);
+  margin-right: 0; /* Add this line to remove the margin */
+  padding: 0px 0.42em;
+}
+
+.warnInput, .warnInput:focus{
+    border: 1px solid var(--red);
+}
+
+
+
+.select-tip {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+
+  
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+  
+.button-grid button {
+    margin: 0; /* Remove the default margin */
+    width: 100%; /* Set the width to 100% */
+    cursor: pointer;
+    background-color: var(--verydarkcyan);
+    color: white;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    transition: 0.2s ease;
+}
+
+/**button-grid FOCUS**/
+.button-grid button:focus{
+    background-color: hsl(172, 67%, 45%);
+    color: var(--verydarkcyan);
+}
+
+
+
+.result-area{
+    background-color: var(--verydarkcyan);
+    border-radius: 10px;
+    width: 350px;
+    padding: 2em 2em;
+    display: flex;
+    
+}
+
+.button-grid button, input{
+    border: none;
+    border-radius: 5px;
+    font-size: var(--f24);  
+}
+
+.result-area{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.total-area{
+    display: flex;
+    justify-items: flex-end;
+}
+
+
+
+.total-area h1:first-child{
+    font-weight: var(--fw7);
+    color: white;
+    font-size: 1.1em;
+}
+
+.total-area h1:first-child span{
+    color: var(--Darkgrayishcyan);
+    font-size: 0.8em;
+}
+
+.total-area h1:last-child{
+    position: absolute;
+    right: 80px;
+    font-size: 3em;
+    margin-top: 0px;
+    color: var(--Strongcyan);
+}
+
+.reset-btn{
+    margin-top: 5em;
+    border: none;
+    padding: 0.7em;
+    font-weight: var(--fw7);
+    font-size: 1.2em;
+    font-family: var(--ff);
+    border-radius: 5px;
+    cursor: not-allowed;
+    transition: 0.2s ease;
+    
+    background-color: hsl(182, 59%, 25%);
+    color: hsl(183, 100%, 15%);;
+}
+
+.active-btn{
+    background-color: var(--Strongcyan);
+}
+
+.active-btn:hover{
+    background-color: var(--Lightgrayishyan)
+}
+
+@media only screen and (max-width: 375px) {
+    
+    .txt-split{
+        margin-top: 5em;
+        margin-bottom: 1em;
+    }
+    
+    .container{
+        flex-direction: column;;
+        padding: 2em 2em;
+        justify-content: center;
+        border-radius: 20px;
+    }
+
+    .calc-area{
+        margin-left: 7px;
+    }
+
+
+    .input-area{
+        width: 300px;
+    }
+
+    .select-tip{
+        width: 100%;
+    }
+
+    .select-tip input{
+        width: 120px;
+    }
+    .button-grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 17px;
+
+    }
+
+    .button-grid button{
+        width: 140px;
+    }
+
+    .result-area{
+        width: 250px;
+        border-radius: 17px;
+        padding: 2em;
+    }
+
+    .total-area h1:first-child{
+        font-size: 15px;
+    }
+
+    .total-area h1:last-child{
+        font-size: 2.7em;
+        right: 50px;
+    }
+
+    
+}
+
+
+
+
+
+
+

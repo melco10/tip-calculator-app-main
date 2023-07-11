@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="main">
+    <h1 class="txt-split" style="letter-spacing: 5px; color: hsl(186, 14%, 43%); font-size: 1.5em; text-align: center;">
+      SPLI<br>TTER
+    </h1>
+
+    <div class="container">
+      <div class="calc-area">
+        <form>
+          <label for="bill" >Bill</label><br>
+          <p id="warn-txt">Can't be zero</p>
+          <span class="input-icon"><img src="images/icon-dollar.svg" alt=""></span>
+          <input class="input-area" type="number" step="any" id="bill" name="bill"  placeholder="0">
+        </form>   
+        <div class="select-tip">
+          <p>Select tip %</p>
+          <div class="button-grid">
+            <button onclick="tip5()">5%</button>
+            <button onclick="tip10()">10%</button>
+            <button onclick="tip15()">15%</button>
+            <button onclick="tip25()">25%</button>
+            <button onclick="tip50()">50%</button>
+            <input type="number" step="any" id="custom-tip"  name="custom"  placeholder="Custom">
+          </div>
+        </div>   
+        <form>
+          <label for="numOfPPL" >Number of People</label><br>
+          <p id="warn-txt2">Can't be zero</p>
+          <span class="input-icon"><img src="images/icon-person.svg" ></span>
+          <input class="input-area" type="number" step="any" id="numOfPPL" name="numOfPPL"  placeholder="0">
+        </form>  
+     
+      </div>
+
+      <div class="result-area">
+        <div class="total-area">
+            <h1>Tip Amount<br><span>/ Person</span></h1>
+            <h1>$<span id="tip-total">0.00</span></h1>
+        </div>
+        <div class="total-area">
+          <h1>Total<br><span>/ Person</span></h1>
+          <h1>$<span id="tip-person">0.00</span></h1>
+        </div>
+
+        <button id="resetBTN" class="reset-btn">RESET</button>
+       
+        
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/melco10">Co</a>.
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
